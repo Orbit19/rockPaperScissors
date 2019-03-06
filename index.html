@@ -1,20 +1,11 @@
-<head>
-</head>
-<body>
-<script>
-  const computerSelection = computerPlay();
-  var userChoice = prompt("Choose your weapon!", "Rock, paper, or scissors?");
-  const playerSelection = userChoice;
-  var computerCounter = 0;
-  var playerCounter = 0;
-  
-  //let choices = ['rock', 'paper', 'scissors'];
-  //could also do this with an array...hmmm, not sure how yet
-  
+
+ var computerSelection = computerPlay();
+ var computerCounter = 0;
+ var playerCounter = 0;
   
   //randomly return rock, paper, or scissors for computer
   function computerPlay() {
-    let i = floor(random(3));
+    var i = Math.floor(Math.random(3));
     if (i === 0) {
       return("rock"); 
     } else if (i === 1) {
@@ -24,24 +15,20 @@
     }
   }
 
-  
-  /* 
-  function playerSelection(); {
-   if userChoice === "rock" {
-      return(0) }
-     else if userChoice === "paper" {
-      return(1) }
-     else if userChoice === "scissors" {
-       return(2) }; */
+  function playerSelection() {
+   prompt("Choose your weapon!", "Rock, paper, or scissors?");
+}
+
   //take input of rock, paper, scissors in any case, maybe convert to lower case?
-  }
-  
+
   //compare user vs computer
- function playRound (playerSelection, computerSelection) {
-  return("You chose " + playerSelection + "versus" + computerSelection + "!"); //not sure computer will choose new everytime
-   if (playerSelection === computerSelection) { //not sure if the computer can tell these are the same
-     return("It was a draw. Let's try this again.");
-   } else if ((playerSelection = "rock") && (computerSelection = "paper")) {
+ var playRound = function(playerSelection, computerSelection) {
+  playerSelection();
+  computerPlay();
+  console.log("You chose " + userChoice + " versus " + computerSelection + "!"); //not sure computer will choose new everytime
+   if (userChoice === computerSelection) { //not sure if the computer can tell these are the same
+     console.log("It was a draw. Let's try this again.");
+   } else if ((userChoice = "rock") && (computerSelection = "paper")) {
      return("Computer wins this round!");
      computerCounter++;
    } else if((playerSelection = "rock") && (computerSelection = "scissors")) { 
@@ -64,18 +51,18 @@
    }
        
   
-function game(playRound) {
-    if(playerCounter + computerCounter = 5) {
+function game() {
+    if("playerCounter" + "computerCounter" === 5) {
        if(playerCounter > computerCounter) {
          return("You have beaten me!  I will self destruct shortly.... :(");
        } else if(computerCounter > playerCounter) {
          return("I have beaten the mightiest human!  I can't wait to take over the world!");
        }
     }else {
-      playRound();
+      playRound(playerSelection, computerSelection);
       //game should have 5 playRound  and keep score to report a winner or loser at the end
-  };
+  }
+}
   
+   game();
   
-  </script>
-</body>
