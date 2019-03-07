@@ -1,13 +1,15 @@
 
  var computerSelection = computerPlay();
+ var playerSelection = prompt("Choose your weapon!", "Rock, paper, or scissors?");  //take input of rock, paper, scissors 
+ playerSelection = playerSelection.toLowerCase();                                   //convert to lower case
  var computerCounter = 0;
  var playerCounter = 0;
   
-  //randomly return rock, paper, or scissors for computer
-  function computerPlay() {
-    var i = Math.floor(Math.random(3));
-    if (i === 0) {
-      return("rock"); 
+ //randomly return rock, paper, or scissors for computer
+ function computerPlay() {
+ var i = Math.floor(Math.random(3));
+   if (i === 0) {
+     return("rock"); 
     } else if (i === 1) {
       return("paper"); 
     } else if (i === 2) {
@@ -15,11 +17,8 @@
     }
   }
 
-  function playerSelection() {
-   prompt("Choose your weapon!", "Rock, paper, or scissors?");
-}
 
-  //take input of rock, paper, scissors in any case, maybe convert to lower case?
+  
 
   //compare user vs computer
  var playRound = function(playerSelection, computerSelection) {
