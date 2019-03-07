@@ -5,30 +5,31 @@
  var computerCounter;                                                           //create base score
  var playerCounter;
   
- //randomly return rock, paper, or scissors for computer
- var computerChoice = choices[Math.floor(Math.random() * 3)];
+ //randomly return rock, paper, or scissors for computer multiple times (I suspect this is only run once)
+ var computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
  
   //compare user vs computer aka playRound
  var playRound = function(playerSelect, computerChoice) {
    console.log("You chose " + playerSelect + " versus the computer's mighty " + computerChoice + "!"); //not sure computer will choose new everytime
    if (playerSelect === computerChoice) {            //tie state
      console.log("It was a draw. Let's try this again.");     //do i need to initiate another round here?
-   } else if ((playerSelect = "rock") && (computerChoice = "paper")) {
+   } else if ((playerSelect === "rock") && (computerChoice === "paper")) {
      console.log("Computer wins this round!");
      computerCounter++;
-   } else if((playerSelect = "rock") && (computerChoice = "scissors")) { 
+   } else if((playerSelect === "rock") && (computerChoice === "scissors")) { 
       console.log("You win this round!");
       playerCounter++;
-   } else if((playerSelect = "scissors") && (computerChoice = "paper")) {
+   } else if((playerSelect === "scissors") && (computerChoice === "paper")) {
      console.log("You snipped me! Plus one point for you.");
      playerCounter++;
-   } else if((playerSelect = "scissors") && (computerChoice = "rock")) {
+   } else if((playerSelect === "scissors") && (computerChoice === "rock")) {
      console.log("I've crushed you! One point for me.");
      computerCounter++;
-   } else if((playerSelect = "paper") && (computerChoice = "rock")) {
+   } else if((playerSelect === "paper") && (computerChoice === "rock")) {
      console.log("You covered me up! Plus one point for you");
      playerCounter++;
-   } else if((playerSelect = "paper") && (computerChoice = "scissors")) {
+   } else if((playerSelect === "paper") && (computerChoice === "scissors")) {
      console.log("Mwhahaha, what shall I make out of you?!? Maybe a snowflake.");
      computerCounter++;
    }
