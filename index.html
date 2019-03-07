@@ -17,17 +17,14 @@
     }
   }
 
-
-  
-
-  //compare user vs computer
+  //compare user vs computer aka playRound
  var playRound = function(playerSelection, computerSelection) {
-  playerSelection();
+  playerSelection;
   computerPlay();
-  console.log("You chose " + userChoice + " versus " + computerSelection + "!"); //not sure computer will choose new everytime
-   if (userChoice === computerSelection) { //not sure if the computer can tell these are the same
+  console.log("You chose " + playerSelection + " versus " + computerSelection + "!"); //not sure computer will choose new everytime
+   if (playerSelection === computerSelection) { //not sure if the computer can tell these are the same
      console.log("It was a draw. Let's try this again.");
-   } else if ((userChoice = "rock") && (computerSelection = "paper")) {
+   } else if ((playerSelection = "rock") && (computerSelection = "paper")) {
      console.log("Computer wins this round!");
      computerCounter++;
    } else if((playerSelection = "rock") && (computerSelection = "scissors")) { 
