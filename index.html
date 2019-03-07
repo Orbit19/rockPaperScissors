@@ -1,49 +1,38 @@
-
- var computerSelection = computerPlay();
- var playerSelection = prompt("Choose your weapon!", "Rock, paper, or scissors?");  //take input of rock, paper, scissors 
- playerSelection = playerSelection.toLowerCase();                                   //convert to lower case
+ var playerSelect = prompt("Choose your weapon!", "Rock, paper, or scissors?");  //take input of rock, paper, scissors 
+ playerSelect = playerSelect.toLowerCase();                                   //convert to lower case
+ var rules = {'rock': 'scissors', 'paper': 'rock', 'scissors': 'paper};
+ var choices = Object.keys(rules);
  var computerCounter = 0;                                                           //create base score
  var playerCounter = 0;
   
  //randomly return rock, paper, or scissors for computer
- function computerPlay() {
- var i = Math.floor(Math.random(3));
-   if (i === 0) {
-     return("rock"); 
-    } else if (i === 1) {
-      return("paper"); 
-    } else if (i === 2) {
-      return("scissors"); 
-    }
-  }
-
+ var computerChoice = choices[Math.floor(Math.random() * 3)];
+ 
   //compare user vs computer aka playRound
- var playRound = function(playerSelection, computerSelection) {
-  playerSelection;
-  computerPlay();
-  console.log("You chose " + playerSelection + " versus " + computerSelection + "!"); //not sure computer will choose new everytime
-   if (playerSelection === computerSelection) { //not sure if the computer can tell these are the same
+ var playRound = function(playerSelect, computerChoice) {
+   console.log("You chose " + playerSelect + " versus " + computerChoice + "!"); //not sure computer will choose new everytime
+   if (playerSelect === computerChoice) { //not sure if the computer can tell these are the same
      console.log("It was a draw. Let's try this again.");
-   } else if ((playerSelection = "rock") && (computerSelection = "paper")) {
+   } else if ((playerSelect = "rock") && (computerChoice = "paper")) {
      console.log("Computer wins this round!");
      computerCounter++;
-   } else if((playerSelection = "rock") && (computerSelection = "scissors")) { 
+   } else if((playerSelect = "rock") && (computerChoice = "scissors")) { 
       console.log("You win this round!");
       playerCounter++;
-   } else if((playerSelection = "scissors") && (computerSelection = "paper")) {
+   } else if((playerSelect = "scissors") && (computerChoice = "paper")) {
      console.log("You snipped me! Plus one point for you.");
      playerCounter++;
-   } else if((playerSelection = "scissors") && (computerSelection = "rock")) {
+   } else if((playerSelect = "scissors") && (computerChoice = "rock")) {
      console.log("I've crushed you! One point for me.");
      computerCounter++;
-   } else if((playerSelection = "paper") && (computerSelection = "rock")) {
+   } else if((playerSelection = "paper") && (computerChoice = "rock")) {
      console.log("You covered me up! Plus one point for you");
      playerCounter++;
-   } else if((playerSelection = "paper") && (computerSelection = "scissors")) {
+   } else if((playerSelection = "paper") && (computerChoice = "scissors")) {
      console.log("Mwhahaha, what shall I make out of you?!? Maybe a snowflake.");
      computerCounter++;
    }
-     console.log(playRound(playerSelection, computerSelection));
+     console.log(playRound(playerSelect, computerChoice));
    }
        
   
@@ -56,7 +45,7 @@ function game() {
          console.log("I have beaten the mightiest human!  I can't wait to take over the world!");
        }
     }else {
-      playRound(playerSelection, computerSelection);
+      playRound(playerSelect, computerChoice);
       //game should have 5 playRound  and keep score to report a winner or loser at the end
   }
 }
