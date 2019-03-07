@@ -11,8 +11,8 @@
   //compare user vs computer aka playRound
  var playRound = function(playerSelect, computerChoice) {
    console.log("You chose " + playerSelect + " versus the computer's mighty " + computerChoice + "!"); //not sure computer will choose new everytime
-   if (playerSelect === computerChoice) { //not sure if the computer can tell these are the same
-     console.log("It was a draw. Let's try this again.");
+   if (playerSelect === computerChoice) {            //tie state
+     console.log("It was a draw. Let's try this again.");     //do i need to initiate another round here?
    } else if ((playerSelect = "rock") && (computerChoice = "paper")) {
      console.log("Computer wins this round!");
      computerCounter++;
@@ -39,13 +39,13 @@ function game() {
     if(playerCounter + computerCounter === 5) {
        if(playerCounter > computerCounter) {
          console.log("You have beaten me!  I will self destruct shortly.... :(");
-         //clear computerCounter && playerCounter;        //clear counters and ask if player wants new game?
+         //clear computerCounter && playerCounter and ask if player wants new game?
        } else if(computerCounter > playerCounter) {
          console.log("I have beaten the mightiest human!  I can't wait to take over the world!");
        }
-    }else {
+    }else{
       playRound(playerSelect, computerChoice);
-      //game should have 5 playRound  and keep score to report a winner or loser at the end
+      //game should have 5 playRound s and keep score to report a winner or loser at the end
   }
 }
   
