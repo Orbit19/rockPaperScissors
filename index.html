@@ -10,7 +10,7 @@
  
   //compare user vs computer aka playRound
  var playRound = function(playerSelect, computerChoice) {
-   console.log("You chose " + playerSelect + " versus the computer's mighty" + computerChoice + "!"); //not sure computer will choose new everytime
+   console.log("You chose " + playerSelect + " versus the computer's mighty " + computerChoice + "!"); //not sure computer will choose new everytime
    if (playerSelect === computerChoice) { //not sure if the computer can tell these are the same
      console.log("It was a draw. Let's try this again.");
    } else if ((playerSelect = "rock") && (computerChoice = "paper")) {
@@ -25,10 +25,10 @@
    } else if((playerSelect = "scissors") && (computerChoice = "rock")) {
      console.log("I've crushed you! One point for me.");
      computerCounter++;
-   } else if((playerSelection = "paper") && (computerChoice = "rock")) {
+   } else if((playerSelect = "paper") && (computerChoice = "rock")) {
      console.log("You covered me up! Plus one point for you");
      playerCounter++;
-   } else if((playerSelection = "paper") && (computerChoice = "scissors")) {
+   } else if((playerSelect = "paper") && (computerChoice = "scissors")) {
      console.log("Mwhahaha, what shall I make out of you?!? Maybe a snowflake.");
      computerCounter++;
    }
