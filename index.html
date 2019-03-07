@@ -1,6 +1,6 @@
  var playerSelect = prompt("Choose your weapon!", "Rock, paper, or scissors?");  //take input of rock, paper, scissors 
  playerSelect = playerSelect.toLowerCase();                                   //convert to lower case
- var rules = {'rock': 'scissors', 'paper': 'rock', 'scissors': 'paper};
+ var rules = {'rock': 'scissors', 'paper': 'rock', 'scissors': 'paper'};
  var choices = Object.keys(rules);
  var computerCounter = 0;                                                           //create base score
  var playerCounter = 0;
@@ -32,8 +32,7 @@
      console.log("Mwhahaha, what shall I make out of you?!? Maybe a snowflake.");
      computerCounter++;
    }
-     console.log(playRound(playerSelect, computerChoice));
-   }
+   };
        
  //Checks scores to see if game should continue, will continue until 5 rounds (ties don't count) have been completed 
 function game() {
