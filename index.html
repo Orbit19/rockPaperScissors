@@ -2,7 +2,7 @@
  var computerSelection = computerPlay();
  var playerSelection = prompt("Choose your weapon!", "Rock, paper, or scissors?");  //take input of rock, paper, scissors 
  playerSelection = playerSelection.toLowerCase();                                   //convert to lower case
- var computerCounter = 0;
+ var computerCounter = 0;                                                           //create base score
  var playerCounter = 0;
   
  //randomly return rock, paper, or scissors for computer
@@ -28,22 +28,22 @@
    if (userChoice === computerSelection) { //not sure if the computer can tell these are the same
      console.log("It was a draw. Let's try this again.");
    } else if ((userChoice = "rock") && (computerSelection = "paper")) {
-     return("Computer wins this round!");
+     console.log("Computer wins this round!");
      computerCounter++;
    } else if((playerSelection = "rock") && (computerSelection = "scissors")) { 
-      return("You win this round!");
+      console.log("You win this round!");
       playerCounter++;
    } else if((playerSelection = "scissors") && (computerSelection = "paper")) {
-     return("You snipped me! Plus one point for you.");
+     console.log("You snipped me! Plus one point for you.");
      playerCounter++;
    } else if((playerSelection = "scissors") && (computerSelection = "rock")) {
-     return("I've crushed you! One point for me.");
+     console.log("I've crushed you! One point for me.");
      computerCounter++;
    } else if((playerSelection = "paper") && (computerSelection = "rock")) {
-     return("You covered me up! Plus one point for you");
+     console.log("You covered me up! Plus one point for you");
      playerCounter++;
    } else if((playerSelection = "paper") && (computerSelection = "scissors")) {
-     return("Mwhahaha, what shall I make out of you?!? Maybe a snowflake.");
+     console.log("Mwhahaha, what shall I make out of you?!? Maybe a snowflake.");
      computerCounter++;
    }
      console.log(playRound(playerSelection, computerSelection));
@@ -51,11 +51,12 @@
        
   
 function game() {
-    if("playerCounter" + "computerCounter" === 5) {
+    if(playerCounter + computerCounter === 5) {
        if(playerCounter > computerCounter) {
-         return("You have beaten me!  I will self destruct shortly.... :(");
+         console.log("You have beaten me!  I will self destruct shortly.... :(");
+         //clear computerCounter && playerCounter;        //clear counters and ask if player wants new game?
        } else if(computerCounter > playerCounter) {
-         return("I have beaten the mightiest human!  I can't wait to take over the world!");
+         console.log("I have beaten the mightiest human!  I can't wait to take over the world!");
        }
     }else {
       playRound(playerSelection, computerSelection);
