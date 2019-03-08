@@ -1,16 +1,11 @@
- var playerSelect = prompt("Choose your weapon!", "Rock, paper, or scissors?");  //take input of rock, paper, scissors 
- playerSelect = playerSelect.toLowerCase();                               //convert to lower case (can I add this to above line?)
- var rules = {'rock': 'scissors', 'paper': 'rock', 'scissors': 'paper'};
- var choices = Object.keys(rules);
- var computerCounter = 0;                                                           //create base score
- var playerCounter = 0;
-  
- //randomly return rock, paper, or scissors for computer multiple times (I suspect this is only run once)
- var computerChoice = choices[Math.floor(Math.random() * choices.length)];
-
-   //compare user vs computer aka playRound
+var playerSelect; 
+var computerChoice;
+var computerCounter = 0;            //create base score
+var playerCounter = 0;
+ 
+//compare user vs computer aka playRound
  var playRound = function(playerSelect, computerChoice) {
-   console.log("You chose " + playerSelect + " versus the computer's mighty " + computerChoice + "!"); //not sure computer will choose new everytime
+   console.log("You chose " + playerSelect + " versus the computer's mighty " + computerChoice + "!"); 
    if (playerSelect === computerChoice) {            //tie state
      console.log("It was a draw. Let's try this again.");     //do i need to initiate another round here?
    } else if ((playerSelect === "rock") && (computerChoice === "paper")) {
@@ -32,21 +27,27 @@
      console.log("Mwhahaha, what shall I make out of you?!? Maybe a snowflake.");
      computerCounter++;
    }
-   console.log(computerCounter);
    };
        
  //Checks scores to see if game should continue, will continue until 5 rounds (ties don't count) have been completed 
 function game() {
-    if(playerCounter + computerCounter === 5) {
+  while(playerCounter + computerCounter < 5) {
+    playerSelect = prompt("Choose your weapon!", "Rock, paper, or scissors?");  //User input 
+    playerSelect = playerSelect.toLowerCase();            //convert to lower case (can I add this to above line?)
+    var rules = {'rock': 'scissors', 'paper': 'rock', 'scissors': 'paper'};
+    var choices = Object.keys(rules);
+    computerChoice = choices[Math.floor(Math.random() * choices.length)];  //computer input
+    playRound(playerSelect, computerChoice);  //game should have 5 playRound, keep score declare winner or loser at the end
+    }  
+  if(playerCounter + computerCounter === 5) {
        if(playerCounter > computerCounter) {
          console.log("You have beaten me!  I will self destruct shortly.... :(");
          //clear computerCounter && playerCounter and ask if player wants new game? endState
         }else{
          console.log("I have beaten the mightiest human!  I can't wait to take over the world!");
-         //clear computerCounter && playerCounter and ask if player wants new game? endState
-        }
-    }else{
-      playRound(playerSelect, computerChoice);  //game should have 5 playRound, keep score declare winner or loser at the end
+         console.log("Your score was" + playerCounter + ":/")
+        }      
     }
 }
+
 game();
