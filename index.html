@@ -8,8 +8,7 @@
  //randomly return rock, paper, or scissors for computer multiple times (I suspect this is only run once)
  var computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
- 
-  //compare user vs computer aka playRound
+   //compare user vs computer aka playRound
  var playRound = function(playerSelect, computerChoice) {
    console.log("You chose " + playerSelect + " versus the computer's mighty " + computerChoice + "!"); //not sure computer will choose new everytime
    if (playerSelect === computerChoice) {            //tie state
@@ -33,6 +32,7 @@
      console.log("Mwhahaha, what shall I make out of you?!? Maybe a snowflake.");
      computerCounter++;
    }
+   console.log(computerCounter);
    };
        
  //Checks scores to see if game should continue, will continue until 5 rounds (ties don't count) have been completed 
@@ -49,6 +49,4 @@ function game() {
       playRound(playerSelect, computerChoice);  //game should have 5 playRound, keep score declare winner or loser at the end
     }
 }
-  
-   game();
-  
+game();
