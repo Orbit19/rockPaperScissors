@@ -41,10 +41,10 @@ function game() {
        if(playerCounter > computerCounter) {
          console.log("You have beaten me!  I will self destruct shortly.... :(");
          //clear computerCounter && playerCounter and ask if player wants new game? endState
-       } else if(computerCounter > playerCounter) {
+        }else{
          console.log("I have beaten the mightiest human!  I can't wait to take over the world!");
          //clear computerCounter && playerCounter and ask if player wants new game? endState
-       }
+        }
     }else{
       playRound(playerSelect, computerChoice);  //game should have 5 playRound, keep score declare winner or loser at the end
     }
