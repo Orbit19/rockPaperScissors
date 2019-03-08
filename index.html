@@ -2,8 +2,8 @@
  playerSelect = playerSelect.toLowerCase();                               //convert to lower case (can I add this to above line?)
  var rules = {'rock': 'scissors', 'paper': 'rock', 'scissors': 'paper'};
  var choices = Object.keys(rules);
- var computerCounter;                                                           //create base score
- var playerCounter;
+ var computerCounter = 0;                                                           //create base score
+ var playerCounter = 0;
   
  //randomly return rock, paper, or scissors for computer multiple times (I suspect this is only run once)
  var computerChoice = choices[Math.floor(Math.random() * choices.length)];
