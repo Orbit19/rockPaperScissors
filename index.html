@@ -29,14 +29,14 @@ var playRound = function(playerSelect, computerChoice) {
   }
 };  
 
-//Checks scores to see if game should continue, will continue until 5 rounds (ties don't count) have been completed 
+//Checks scores to see if game should continue, 5 rounds (!ties), declare win/loss 
 function game() {
   while(playerCounter + computerCounter < 5) {
     playerSelect = prompt("Choose your weapon!", "Rock, paper, or scissors?").toLowerCase();  //User input and convert to lower case
     var rules = {'rock': 'scissors', 'paper': 'rock', 'scissors': 'paper'};
     var choices = Object.keys(rules);
     computerChoice = choices[Math.floor(Math.random() * choices.length)];  //computer input
-    playRound(playerSelect, computerChoice);  //game should have 5 playRound, keep score declare winner or loser at the end
+    playRound(playerSelect, computerChoice);  
   }  
                                             
   if(playerCounter + computerCounter === 5) {
