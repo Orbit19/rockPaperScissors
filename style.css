@@ -1,5 +1,6 @@
 body {
  background-color: lightgoldenrodyellow;
+ padding: 20px;
 }
 
 h1 {
@@ -21,25 +22,56 @@ h4 {
   text-align: center;
   font-size: 18px;
 }
+
 .container {
   display: flex; /* or inline-flex */
   flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: auto;
+  justify-content: space-evenly;
 }
 
-
-#scissors {
+#rock, #paper, #scissors {
   display: flex;
-  transform: rotate(90deg);
-  width: 15em;
+  width: auto;
+  height: 200px;
 }
 
-#rock {
-  display: flex;
-  width: 15em;
+.rock, .paper, .scissors {
+  position: relative;
+  height: auto;
+  text-align: center;
+  font-size: 40px;
+  font-family: "Palatino Linotype", serif;
+  flex: 2 2 2;
 }
 
-#paper {
-  display: flex;
-  width: 15em;
+.scissors:hover .img_description {
+  visibility: visible;
+  opacity: 1;
+}
+
+.rock:hover .img_description {
+  visibility: visible;
+  opacity: 1;
+}
+
+.paper:hover .img_description {
+  visibility: visible;
+  opacity: 1;
+}
+
+.img_description {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(29, 106, 154, 0.72);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
 }
